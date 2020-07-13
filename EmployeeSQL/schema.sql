@@ -5,6 +5,7 @@ CREATE TABLE Departments (
 	PRIMARY KEY (dept_no)
 );
 
+
 --Create Employee titles table
 CREATE TABLE Titles (
     title_id VARCHAR(255)   NOT NULL,
@@ -28,9 +29,10 @@ CREATE TABLE Employees (
 
 --Create Department and Employee Junction Table
 CREATE TABLE Dept_Emp (
+	id SERIAL NOT NULL,
     emp_no INT   NOT NULL,
     dept_no VARCHAR(255)   NOT NULL,
-	PRIMARY KEY (emp_no),
+	PRIMARY KEY (id),
 	FOREIGN KEY (dept_no) REFERENCES Departments(dept_no),
 	FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
 );
@@ -38,9 +40,10 @@ CREATE TABLE Dept_Emp (
 
 --Create Department Manager Table
 CREATE TABLE Dept_Manager (
+	id SERIAL NOT NULL,
     dept_no VARCHAR(255)   NOT NULL,
     emp_no INT   NOT NULL,
-	PRIMARY KEY (dept_no),
+	PRIMARY KEY (id),
 	FOREIGN KEY (dept_no) REFERENCES Departments(dept_no),
 	FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
 );
@@ -48,10 +51,8 @@ CREATE TABLE Dept_Manager (
 
 --Create Salaries table
 CREATE TABLE Salaries (
-    emp_no INT   NOT NULL,
+    sal_emp_no INT   NOT NULL,
     salary INT   NOT NULL,
-	PRIMARY KEY(emp_no),
-	FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
+	PRIMARY KEY(sal_emp_no),
+	FOREIGN KEY (sal_emp_no) REFERENCES Employees(emp_no)
 );
-
-
