@@ -1,1 +1,2 @@
 # sql-challenge
+This challenge is meant to replicate a real world scenario. As this theoretical data analyst, I needed to look at csvs and first create a ERD to visually display the relationships between each table. Then, I created a postgresSQL schemata to create, organize and link the tables effectively. Lastly, I needed to write queries to answer questions about different people and their information. 
